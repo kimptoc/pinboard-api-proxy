@@ -1,6 +1,10 @@
 This is a thin wrapper for the pinboard-api with a view to making it CORS accessible.
 https://pinboard.in/api/
 
+# TODO
+- return XML
+- generate pinboard api url from the incoming params
+- proxy to real pinboard api
 
 
 # serverless commands
