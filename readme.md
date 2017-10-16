@@ -5,7 +5,8 @@ https://pinboard.in/api/
 - return XML
 - generate pinboard api url from the incoming params
 - proxy to real pinboard api
-
+-- https://pinboard.in/api/
+-- https://github.com/nodejitsu/node-http-proxy
 
 # serverless commands
 
