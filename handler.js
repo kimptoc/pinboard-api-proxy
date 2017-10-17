@@ -3,11 +3,12 @@
 module.exports.main = (event, context, callback) => {
   const response = {
     statusCode: 200,
-    body: JSON.stringify({
+    body: "<somexml>foobar 222</somexml>",
+//    body: JSON.stringify({
     //  message: 'GoGoGo Serverless v1.0! Your function executed successfully!',
-      message: helloHello(event), 
-      input: event,
-    }),
+//      message: helloHello(event), 
+//      input: event,
+//    }),
   };
 
   callback(null, response);

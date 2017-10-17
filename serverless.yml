@@ -55,7 +55,7 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
+  main:
     handler: handler.main
     events:
 #      - http: get hello
