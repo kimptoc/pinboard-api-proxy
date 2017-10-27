@@ -18,11 +18,11 @@ serverless deploy -v
 serverless deploy --stage prod --region us-east-1
 
 
-serverless deploy function -f hello
+serverless deploy function -f main
 
-serverless invoke -f hello -l
+serverless invoke -f main -l
 
-serverless logs -f hello -t
+serverless logs -f main -t
 
 # workflow - https://serverless.com/framework/docs/providers/aws/guide/workflow/
 
