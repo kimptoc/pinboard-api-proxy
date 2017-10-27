@@ -1,23 +1,25 @@
 'use strict';
 
+var pinboard = require('./pinboard');
+
 module.exports.main = (event, context, callback) => {
+
+  var queryStringParameters = event.queryStringParameters;
+  var queryPath = "";
+  for (var key in queryStringParameters) {
+    if (queryStringParameters.hasOwnProperty(key)) {
+      queryPath += key+"="+queryStringParameters[key];
+    }
+  }
+  if (queryPath.length > 0) queryPath = "?"+queryPath;
+  pinboard.call('https://api.pinboard.in'+event.path+queryPath, function(err, statusCodeResult, bodyResult) {
+
   const response = {
-    statusCode: 200,
-    body: "<somexml>foobar 222</somexml>",
-//    body: JSON.stringify({
-    //  message: 'GoGoGo Serverless v1.0! Your function executed successfully!',
-//      message: helloHello(event), 
-//      input: event,
-//    }),
+    statusCode: statusCodeResult,
+    body: bodyResult
   };
 
   callback(null, response);
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
+});
 };
 
-function helloHello(event) {
-  console.log(JSON.stringify(event));
-  return "Howdy Hello Hello Hello!!"
-}
