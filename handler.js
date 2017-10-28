@@ -16,6 +16,11 @@ module.exports.main = (event, context, callback) => {
 
   const response = {
     statusCode: statusCodeResult,
+    headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Content-Type":"text/xml; charset=utf-8"
+
+    },
     body: bodyResult
   };
 
